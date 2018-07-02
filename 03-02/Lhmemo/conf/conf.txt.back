@@ -1,0 +1,15 @@
+[louhui]
+path = E:\python\04auto\homework\Lhmemo\db
+file_name = louhui
+db_type = db
+
+[娄辉]
+path = E:\python\04auto\homework\Lhmemo\db
+file_name = 娄辉
+db_type = db
+
+[python]
+path = E:\python\04auto\homework\Lhmemo\db
+file_name = python
+db_type = db
+

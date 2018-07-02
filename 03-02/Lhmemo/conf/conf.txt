@@ -1,0 +1,15 @@
+[admin]
+path = D:\homework\03-02\Lhmemo\db
+file_name = admin
+db_type = db
+
+[louhui]
+path = D:\homework\03-02\Lhmemo\db
+file_name = louhui
+db_type = db
+
+[root]
+path = D:\homework\03-02\Lhmemo\db
+file_name = root
+db_type = db
+

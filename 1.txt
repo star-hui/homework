@@ -1,0 +1,7 @@
+[DEFAULT]
+path = c:/f/d
+base_dir = c:/f/d
+
+[lh]
+path = ${base_dir}/init.com
+

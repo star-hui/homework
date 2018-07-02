@@ -1,0 +1,355 @@
+> python main.py=======================================================================》帮助信息
+2018-07-01 15:28:26,630 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:28:26,632 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+
+                    菜单帮助信息：
+            获取帮助：  python main.py -h
+            注册:       python main.py -r
+            添加事件：  python main.py -u 用户名 -p 密码 -a
+                    事件写法:两种：
+                            1. 指定时间使用-分割
+                                    2017 1 2-去买酒
+                                    1 2-去买酒
+                            2. 相对时间，支持如下
+                                明天去买酒
+                                后天去买酒
+                                下个礼拜3去买酒
+                                下个月5号去买酒
+            删除事件:   python main.py -u 用户名 -p 密码 -d
+            修改事件：  python main.py -y 用户名 -p 密码 -m
+
+            导出事件：  python main.py -u 用户名 -p 密码 -e
+                                支持pdf，txt，word，excel四种格式
+            邮件事件：  python main.py -u 用户名 -p 密码 -email
+            查询事件：
+                    所有事件:       python main.py -y 用户名 -p 密码 -p
+                    模糊匹配thing:  python main.py -y 用户名 -p 密码 -s_thing
+                    时间匹配事件:       python main.py -y 用户名 -p 密码 -s_date
+                                          0  0 0 代表 全部
+                                        2017 0 0 代表 2017年
+                                        2017 3 0 代表 2017年3月份
+                                        2017 3 3 代表 2017年3月3日
+
+*************************************************************************************************注册部分
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin 
+> python main.py -r
+2018-07-01 15:28:37,531 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:28:37,533 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+请输入注册的用户名,按q退出admin
+用户名已经存在，请换一个用户名
+请输入注册的用户名,按q退出root
+请输入注册的密码root
+请再次输入注册的密码root
+D:\homework\03-02\Lhmemo\db\pwd.db
+2018-07-01 15:28:56,973 adminmemo.py [line:138] AdminMemo INFO 密码文件报错成功
+2018-07-01 15:28:56,974 adminmemo.py [line:118] AdminMemo INFO root-注册成功
+注册成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -a
+2018-07-01 15:29:04,029 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:29:04,031 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 15:29:04,031 adminmemo.py [line:72] AdminMemo INFO admin登入成功
+2018-07-01 15:29:04,032 adminmemo.py [line:269] AdminMemo INFO 加载数据库文件
+请输入事件:2019 3 3-去吃西瓜
+2019-03-03 00:00:00 去吃西瓜
+2018-07-01 15:29:27,942 adminmemo.py [line:224] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 15:29:27,945 adminmemo.py [line:228] AdminMemo INFO 文件保存成功
+2018-07-01 15:29:27,945 adminmemo.py [line:198] AdminMemo INFO 添加一条数据成功
+
+
+************************************************************************************************添加部分
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -a
+2018-07-01 15:29:31,945 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:29:31,948 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 15:29:31,949 adminmemo.py [line:72] AdminMemo INFO admin登入成功
+2018-07-01 15:29:31,950 adminmemo.py [line:269] AdminMemo INFO 加载数据库文件
+请输入事件:明天去上班
+2018-07-02 15:29:41 去上班
+2018-07-01 15:29:41,766 adminmemo.py [line:224] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 15:29:41,767 adminmemo.py [line:228] AdminMemo INFO 文件保存成功
+2018-07-01 15:29:41,767 adminmemo.py [line:198] AdminMemo INFO 添加一条数据成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -a
+2018-07-01 15:29:46,224 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:29:46,225 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 15:29:46,226 adminmemo.py [line:72] AdminMemo INFO admin登入成功
+2018-07-01 15:29:46,226 adminmemo.py [line:269] AdminMemo INFO 加载数据库文件
+请输入事件:后天去吃饭
+2018-07-03 15:29:51 去吃饭
+2018-07-01 15:29:51,646 adminmemo.py [line:224] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 15:29:51,648 adminmemo.py [line:228] AdminMemo INFO 文件保存成功
+2018-07-01 15:29:51,648 adminmemo.py [line:198] AdminMemo INFO 添加一条数据成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -a
+2018-07-01 15:29:55,092 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:29:55,094 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 15:29:55,095 adminmemo.py [line:72] AdminMemo INFO admin登入成功
+2018-07-01 15:29:55,096 adminmemo.py [line:269] AdminMemo INFO 加载数据库文件
+请输入事件:下个礼拜1去吃早饭
+0
+0
+2018-07-09 15:30:11 去吃早饭
+2018-07-01 15:30:11,981 adminmemo.py [line:224] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 15:30:11,982 adminmemo.py [line:228] AdminMemo INFO 文件保存成功
+2018-07-01 15:30:11,982 adminmemo.py [line:198] AdminMemo INFO 添加一条数据成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -a
+2018-07-01 15:30:17,914 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:30:17,915 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 15:30:17,915 adminmemo.py [line:72] AdminMemo INFO admin登入成功
+2018-07-01 15:30:17,916 adminmemo.py [line:269] AdminMemo INFO 加载数据库文件
+请输入事件:下个月去健身
+2018-07-01 15:30:23,117 adminmemo.py [line:179] AdminMemo WARNING 输入有误
+2018-07-01 15:30:23,117 adminmemo.py [line:201] AdminMemo WARNING 添加事件，出现未知错误
+添加失败，请重新输入 local variable 'memo' referenced before assignment
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -a
+2018-07-01 15:30:39,632 adminmemo.py [line:52] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 15:30:39,634 adminmemo.py [line:143] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 15:30:39,634 adminmemo.py [line:72] AdminMemo INFO admin登入成功
+2018-07-01 15:30:39,635 adminmemo.py [line:269] AdminMemo INFO 加载数据库文件
+请输入事件:下个月3号去健身
+2018-08-03 15:30:47 去健身
+2018-07-01 15:30:47,567 adminmemo.py [line:224] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 15:30:47,570 adminmemo.py [line:228] AdminMemo INFO 文件保存成功
+2018-07-01 15:30:47,571 adminmemo.py [line:198] AdminMemo INFO 添加一条数据成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+>
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+>
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+>
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+
+*********************************************************************************************************删除部分
+> python main.py -u admin -p admin -d
+2018-07-01 16:29:08,067 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 16:29:08,068 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 16:29:08,069 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 16:29:08,069 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+请输入删除密码(8888)，来确定删除:
+1   2018-07-02 23:01:49 --记得吃早饭
+2   2018-07-02 10:18:30 --去吃烧烤
+3   2018-07-03 10:20:06 --提醒我吃鸡
+4   2018-08-05 10:21:09 --去买米家里没米了
+5   2018-08-10 10:21:25 --买电饭锅
+6   2019-10-10 00:00:00 --抢占双十一
+7   2019-03-03 00:00:00 --去吃西瓜
+8   2018-07-02 15:29:41 --去上班
+9   2018-07-03 15:29:51 --去吃饭
+10   2018-07-09 15:30:11 --去吃早饭
+11   2018-08-03 15:30:47 --去健身
+2018-07-01 16:29:16,465 adminmemo.py [line:291] AdminMemo INFO 输出所有的日志
+请输入要删除的编号1
+2018-07-01 16:29:19,392 adminmemo.py [line:228] AdminMemo INFO 事件，删除成功
+删除成功
+2   2018-07-02 10:18:30 --去吃烧烤
+3   2018-07-03 10:20:06 --提醒我吃鸡
+4   2018-08-05 10:21:09 --去买米家里没米了
+5   2018-08-10 10:21:25 --买电饭锅
+6   2019-10-10 00:00:00 --抢占双十一
+7   2019-03-03 00:00:00 --去吃西瓜
+8   2018-07-02 15:29:41 --去上班
+9   2018-07-03 15:29:51 --去吃饭
+10   2018-07-09 15:30:11 --去吃早饭
+11   2018-08-03 15:30:47 --去健身
+2018-07-01 16:29:19,400 adminmemo.py [line:291] AdminMemo INFO 输出所有的日志
+2018-07-01 16:29:19,403 adminmemo.py [line:237] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 16:29:19,405 adminmemo.py [line:241] AdminMemo INFO 文件保存成功
+
+
+
+***************************************************************************************************全部输出
+>
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -p
+2018-07-01 16:29:36,277 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 16:29:36,278 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 16:29:36,278 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 16:29:36,279 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+2   2018-07-02 10:18:30 --去吃烧烤
+3   2018-07-03 10:20:06 --提醒我吃鸡
+4   2018-08-05 10:21:09 --去买米家里没米了
+5   2018-08-10 10:21:25 --买电饭锅
+6   2019-10-10 00:00:00 --抢占双十一
+7   2019-03-03 00:00:00 --去吃西瓜
+8   2018-07-02 15:29:41 --去上班
+9   2018-07-03 15:29:51 --去吃饭
+10   2018-07-09 15:30:11 --去吃早饭
+11   2018-08-03 15:30:47 --去健身
+2018-07-01 16:29:36,281 adminmemo.py [line:291] AdminMemo INFO 输出所有的日志
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+>
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+>*****************************************************************************************************修改部分
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -m
+2018-07-01 16:29:42,851 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 16:29:42,851 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 16:29:42,852 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 16:29:42,853 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+2   2018-07-02 10:18:30 --去吃烧烤
+3   2018-07-03 10:20:06 --提醒我吃鸡
+4   2018-08-05 10:21:09 --去买米家里没米了
+5   2018-08-10 10:21:25 --买电饭锅
+6   2019-10-10 00:00:00 --抢占双十一
+7   2019-03-03 00:00:00 --去吃西瓜
+8   2018-07-02 15:29:41 --去上班
+9   2018-07-03 15:29:51 --去吃饭
+10   2018-07-09 15:30:11 --去吃早饭
+11   2018-08-03 15:30:47 --去健身
+2018-07-01 16:29:42,857 adminmemo.py [line:291] AdminMemo INFO 输出所有的日志
+2018-07-01 16:29:42,858 adminmemo.py [line:392] AdminMemo INFO 修改备忘录
+请输入需要修改的编号：2
+请输入要修改的字段(date或thing) q返回:thing
+请输入一个新thing：去吃完烧烤，买水果
+修改成功
+2018-07-01 16:30:05,818 adminmemo.py [line:237] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 16:30:05,820 adminmemo.py [line:241] AdminMemo INFO 文件保存成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -m
+2018-07-01 16:30:13,455 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 16:30:13,456 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 16:30:13,458 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 16:30:13,459 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+2   2018-07-02 10:18:30 --去吃完烧烤，买水果
+3   2018-07-03 10:20:06 --提醒我吃鸡
+4   2018-08-05 10:21:09 --去买米家里没米了
+5   2018-08-10 10:21:25 --买电饭锅
+6   2019-10-10 00:00:00 --抢占双十一
+7   2019-03-03 00:00:00 --去吃西瓜
+8   2018-07-02 15:29:41 --去上班
+9   2018-07-03 15:29:51 --去吃饭
+10   2018-07-09 15:30:11 --去吃早饭
+11   2018-08-03 15:30:47 --去健身
+2018-07-01 16:30:13,463 adminmemo.py [line:291] AdminMemo INFO 输出所有的日志
+2018-07-01 16:30:13,464 adminmemo.py [line:392] AdminMemo INFO 修改备忘录
+请输入需要修改的编号：2
+请输入要修改的字段(date或thing) q返回:date
+请输入一个新date:2017-01-01：2018-7-3
+修改成功
+2018-07-01 16:30:35,879 adminmemo.py [line:237] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\admin.db
+文件保存成功
+2018-07-01 16:30:35,880 adminmemo.py [line:241] AdminMemo INFO 文件保存成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin
+> python main.py -u admin -p admin -p
+2018-07-01 16:30:40,109 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 16:30:40,111 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 16:30:40,112 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 16:30:40,112 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+2   2018-07-03 00:00:00 --去吃完烧烤，买水果
+3   2018-07-03 10:20:06 --提醒我吃鸡
+4   2018-08-05 10:21:09 --去买米家里没米了
+5   2018-08-10 10:21:25 --买电饭锅
+6   2019-10-10 00:00:00 --抢占双十一
+7   2019-03-03 00:00:00 --去吃西瓜
+8   2018-07-02 15:29:41 --去上班
+9   2018-07-03 15:29:51 --去吃饭
+10   2018-07-09 15:30:11 --去吃早饭
+11   2018-08-03 15:30:47 --去健身
+2018-07-01 16:30:40,115 adminmemo.py [line:291] AdminMemo INFO 输出所有的日志
+
+> python main.py -u admin -p admin -e   *****************************************************************导出成文件部分
+2018-07-01 17:55:18,059 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 17:55:18,060 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 17:55:18,060 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 17:55:18,060 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+
+                支持的格式为：
+                    pdf、word、xlsx、txt
+
+请输入要到出的格式pdf
+2018-07-01 17:55:22,270 adminmemo.py [line:317] AdminMemo INFO 导出成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin**************************************************根据时间查询
+> python main.py -u admin -p admin -s_date
+2018-07-01 17:56:31,505 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 17:56:31,506 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 17:56:31,507 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 17:56:31,508 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+请输入一个月份eg(2017 1 1)2018 0 0
+2018 0 0
+{"2": {"2018-07-03 00:00:00": "去吃完烧烤，买水果"}, "3": {"2018-07-03 10:20:06": "提醒我吃鸡"},
+ "4": {"2018-08-05 10:21:09": "去买米家里没米了"}, "5": {"2018-08-10 10:21:25": "买电饭锅"}, "8"
+: {"2018-07-02 15:29:41": "去上班"}, "9": {"2018-07-03 15:29:51": "去吃饭"}, "10": {"2018-07-09
+15:30:11": "去吃早饭"}, "11": {"2018-08-03 15:30:47": "去健身"}}
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin ****************************************************根据thing来查询
+> python main.py -u admin -p admin -s_thing
+2018-07-01 17:56:46,890 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 17:56:46,891 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 17:56:46,891 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 17:56:46,892 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+请输入事件饭
+2018-07-01 17:56:50,923 adminmemo.py [line:375] AdminMemo INFO 按照 事件 来搜索事件
+{"5": {"2018-08-10 10:21:25": "买电饭锅"}, "9": {"2018-07-03 15:29:51": "去吃饭"}, "10": {"2018-
+07-09 15:30:11": "去吃早饭"}}
+
+
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\Lhmemo\bin****************************************************发送邮件
+> python main.py -u admin -p admin -email
+2018-07-01 17:57:28,577 adminmemo.py [line:64] AdminMemo INFO 加载配置文件
+欢迎来到LH的笔记本
+2018-07-01 17:57:28,578 adminmemo.py [line:155] AdminMemo INFO 进入欢迎函数
+admin欢迎登入!
+2018-07-01 17:57:28,579 adminmemo.py [line:84] AdminMemo INFO admin登入成功
+2018-07-01 17:57:28,579 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
+请输入一个月份eg(2017 1 1)2018 0 0
+2018 0 0
+{"2": {"2018-07-03 00:00:00": "去吃完烧烤，买水果"}, "3": {"2018-07-03 10:20:06": "提醒我吃鸡"},
+ "4": {"2018-08-05 10:21:09": "去买米家里没米了"}, "5": {"2018-08-10 10:21:25": "买电饭锅"}, "8"
+: {"2018-07-02 15:29:41": "去上班"}, "9": {"2018-07-03 15:29:51": "去吃饭"}, "10": {"2018-07-09
+15:30:11": "去吃早饭"}, "11": {"2018-08-03 15:30:47": "去健身"}}
+请输入收件人邮箱:2323449277@qq.com
+
+
+
