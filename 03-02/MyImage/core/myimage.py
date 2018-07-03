@@ -22,6 +22,17 @@ image_base_dir_path = os.path.join(BASE_DIR, 'db')
 
 class ImageUtils:
     """图像处理类"""
+    menus = {
+        '-h' : 'help',
+        '-g' : 'get_image_info',
+        '-e' : 'export_image_info',
+        '-r' : 'rotate',
+        '-c' : 'cut',
+        '-t' : 'thumbnail',
+        '-t_all' : 'thumbnail_all',
+        '-size_all' : 'resize_all',
+        '-size' : 'resize'
+    }
     def __init__(self):
         """
         初始化函数: 每次启动初始化，config的default的base路径，避免移动路径报错。
@@ -29,12 +40,26 @@ class ImageUtils:
         @target_dir: 处理后的图片与目录存放的位置，从config中获取
         """
         self.config = MyConf(config_path)
-        self.config.set_default(image_base_dir_path)  # 初始化的时候，重新写入数据的基础目录，以便于移动目录的时候，自动切换数据库来源
+        self.config.set_default(image_base_dir_path)  # 初始化的时候，在配置文件中重新写入数据的基础目录，以便于移动目录的时候，自动切换数据库来源
         self.source_dir = self.config.read_val('image', 'source_dir')
         self.target_dir = self.config.read_val('image', 'target_dir')
         self.log = lh_log('image')
+
+    def help(self):
+        print("""LH图片系统帮助信息:
+            -h                              获取帮助;
+            -g                              获取文件信心；
+            -e                              导出图片信息到excel；
+            -r image_name point(旋转角度)  bool(0:不镜像,1:镜像)
+            -c image_name w1 h1 w2 h2       裁剪图片
+            -t image_name [percent(缩小比例为浮点数，默认为0.5)]   为单一文件生产缩略图
+            -t_all  [percent(缩小比例为浮点数，默认为0.5)]              为源目录下所有生产缩略图       
+            -size    w  h      重置图片的大小
+            -size_all                       重置目录下所有图片的大小                               
+        """)
     
     def set_dir_config(self, source_dir='${base_dir}/source', target_dir='$(base_dir)/target'):
+        """设置目录结构 """
         # self.config.add()
         # self.config[]
         pass
@@ -63,6 +88,7 @@ class ImageUtils:
             return None
 
     def export_image_info(self):
+        """导出信息到excle中"""
         image_info = self.get_image_info()
         if image_info:
             ex = Export(image_info)
@@ -84,6 +110,7 @@ class ImageUtils:
             im_new.show()
             n1, n2 = file_name.split('.')
             im_new.save(os.path.join(self.target_dir, n1+'-rotate'+'.'+n2))
+            self.log.info('图片成功，在db下查看')
         else:
             print('源路径中不存在该文件')
 
@@ -99,6 +126,7 @@ class ImageUtils:
             im_new.show()
             n1, n2 = file_name.split('.')
             im_new.save(os.path.join(self.target_dir, n1+'-crop'+'.'+n2))
+            self.log.info('文件裁剪成功')
         else:
             print('源路径中不存在该文件')
 
@@ -114,6 +142,7 @@ class ImageUtils:
                 im_new.thumbnail((int(w*percent), int(h*percent)))
                 n1, n2 = file_name.split('.')
                 im_new.save(os.path.join(self.target_dir, n1+'-thumb'+'.'+n2))
+                self.log.info('缩略图片成功')
             else:
                 print('该文件不存在')
         except Exception as e:
@@ -126,11 +155,29 @@ class ImageUtils:
              or  fnmatch.fnmatch(file,'*.bmp') or fnmatch.fnmatch(file, '*.jpeg'):                
                 self.thumbnail(file, percent)
 
-    def resize(self, w, h):
-        
-        for file in os.listdir()
+    def resize(self, file_name, w, h):
+        try:
+            if file_name in os.listdir(self.source_dir):
+                im = Image.open(os.path.join(self.source_dir, file_name))
+                # im.show()
+                im_new = im.resize((w,h))
+                n1, n2 = file_name.split('.')
+                im_new.save(os.path.join(self.target_dir, n1+'-resize'+'.'+n2))
+                self.log.info('图片重置大小成功')
+            else:
+                print('文件不在目录中')
+        except Exception as e:
+            self.log.waring('转换失败', e)
 
-    def resize_all(self)
+    def resize_all(self, w, h):
+        try:
+            for file in os.listdir(self.source_dir):
+                if fnmatch.fnmatch(file, '*.png') or  fnmatch.fnmatch(file, '*.jpg')\
+                or  fnmatch.fnmatch(file,'*.bmp') or fnmatch.fnmatch(file, '*.jpeg'):
+                    self.resize(file, 200, 300)
+            self.log.info('所有图片重置大小成功')
+        except Exception as e:
+            self.log.waring('所有图片重置大小失败')
         
 def main():
     pic = ImageUtils()
@@ -139,6 +186,9 @@ def main():
     # pic.rotate('1.jpg', 45, True)
     # pic.cut('1.jpg', 200,200,600,600)
     # pic.thumbnail('1.jpg', 0.5)
-    pic.thumbnail_all()
+    # pic.thumbnail_all()
+    # pic.resize('1.jpg', 200, 300)
+    # pic.resize_all(200, 300)
+
 if __name__ == '__main__':
     main()

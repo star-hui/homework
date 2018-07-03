@@ -1,0 +1,65 @@
+> python main.py -h
+LH图片系统帮助信息:
+            -h                              获取帮助;
+            -g                              获取文件信心；
+            -e                              导出图片信息到excel；
+            -r image_name point(旋转角度)  bool(0:不镜像,1:镜像)
+            -c image_name w1 h1 w2 h2       裁剪图片
+            -t image_name [percent(缩小比例为浮点数，默认为0.5)]   为单一文件生产缩略图
+            -t_all  [percent(缩小比例为浮点数，默认为0.5)]              为源目录下所有生产缩略图
+            -size    w  h      重置图片的大小
+            -size_all                       重置目录下所有图片的大小
+
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -e
+D:\homework\03-02\MyImage\db\source
+2018-07-04 00:00:05,235 myimage.py [line:84] image INFO 图片信息获取成功
+2018-07-04 00:00:05,244 myimage.py [line:96] image INFO 图片信息导出成功，在db文件下
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -r 1.jpg 25 0
+2018-07-04 00:00:13,802 myimage.py [line:113] image INFO 图片成功，在db下查看
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -c 1.jpg  1  1 500 400
+2018-07-04 00:00:24,867 myimage.py [line:129] image INFO 文件裁剪成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -t 1.jpg 0.6
+2018-07-04 00:00:39,627 myimage.py [line:145] image INFO 缩略图片成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -t_all  0.6
+2018-07-04 00:00:49,093 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,125 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,140 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,171 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,171 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,203 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,203 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,245 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,245 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,276 myimage.py [line:145] image INFO 缩略图片成功
+2018-07-04 00:00:49,307 myimage.py [line:145] image INFO 缩略图片成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -size 1.jpg  200 200
+2018-07-04 00:00:54,574 myimage.py [line:166] image INFO 图片重置大小成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
+> python main.py -size_all 200 200
+2018-07-04 00:01:00,429 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,444 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,444 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,460 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,476 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,476 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,491 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,507 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,507 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,523 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,538 myimage.py [line:166] image INFO 图片重置大小成功
+2018-07-04 00:01:00,538 myimage.py [line:178] image INFO 所有图片重置大小成功
+
+(lh) LH@DESKTOP-E1QA4KJ D:\homework\03-02\MyImage\bin
