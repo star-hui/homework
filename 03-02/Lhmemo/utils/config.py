@@ -6,8 +6,14 @@ class MyConf:
     def __init__(self, path: str):
         '初始化的时候读取配置文件'
         self.path = path
-        self.conf = configparser.ConfigParser()
+        self.conf = configparser.ConfigParser(interpolation=configparser.ExtendedInterpolation())
         self.conf.read(self.path, encoding='utf-8')  # 空文件也不会出错,使用UTF-8，不会报错
+
+    def set_default(self,base_dir):
+        '''设置DEFAULT章节，以便于程序移动目录也能正常的加载数据'''
+        self.conf['DEFAULT'] ={}
+        self.conf['DEFAULT']['base_dir'] = base_dir
+        self.save()
 
     def add(self, section):
         '增加一个章节'

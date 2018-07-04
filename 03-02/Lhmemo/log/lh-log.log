@@ -875,3 +875,63 @@
 2018-07-01 18:58:56,134 adminmemo.py [line:84] AdminMemo INFO admin登入成功
 2018-07-01 18:58:56,135 adminmemo.py [line:282] AdminMemo INFO 加载数据库文件
 2018-07-01 18:58:59,482 adminmemo.py [line:317] AdminMemo INFO 导出成功
+2018-07-04 09:19:16,688 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:19:16,704 adminmemo.py [line:157] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:19:20,085 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:19:20,085 adminmemo.py [line:157] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:19:41,943 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:19:41,943 adminmemo.py [line:157] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:22:23,774 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:22:23,774 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:22:23,774 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:22:23,790 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:22:58,305 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:22:58,305 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:22:58,305 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:22:58,305 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:23:03,045 adminmemo.py [line:216] AdminMemo WARNING 添加事件，出现未知错误
+2018-07-04 09:23:08,364 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:23:08,364 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:23:08,364 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:23:08,364 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:23:08,380 adminmemo.py [line:294] AdminMemo INFO 输出所有的日志
+2018-07-04 09:23:14,597 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:23:14,612 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:23:14,612 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:23:14,612 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:27:08,462 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:27:08,478 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:27:26,264 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:27:26,264 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:27:26,264 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:27:26,264 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:27:31,738 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:27:31,738 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:27:31,738 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:27:31,738 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:27:31,738 adminmemo.py [line:294] AdminMemo INFO 输出所有的日志
+2018-07-04 09:27:36,199 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:27:36,199 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:27:36,199 adminmemo.py [line:86] AdminMemo INFO admin登入成功
+2018-07-04 09:27:36,199 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:27:47,671 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:27:47,671 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:27:59,166 adminmemo.py [line:153] AdminMemo INFO 密码文件报错成功
+2018-07-04 09:27:59,166 adminmemo.py [line:132] AdminMemo INFO louhui123-注册成功
+2018-07-04 09:28:16,829 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:28:16,829 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:28:16,829 adminmemo.py [line:86] AdminMemo INFO louhui123登入成功
+2018-07-04 09:28:16,829 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:28:16,829 adminmemo.py [line:294] AdminMemo INFO 输出所有的日志
+2018-07-04 09:28:22,353 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:28:22,353 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:28:22,353 adminmemo.py [line:86] AdminMemo INFO louhui123登入成功
+2018-07-04 09:28:22,353 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:28:29,503 adminmemo.py [line:240] AdminMemo DEBUG D:\homework\03-02\Lhmemo\db\louhui123.db
+2018-07-04 09:28:29,503 adminmemo.py [line:244] AdminMemo INFO 文件保存成功
+2018-07-04 09:28:29,503 adminmemo.py [line:213] AdminMemo INFO [31;1m添加一条数据成功[0m
+2018-07-04 09:28:34,935 adminmemo.py [line:65] AdminMemo INFO 加载配置文件
+2018-07-04 09:28:34,935 adminmemo.py [line:158] AdminMemo INFO 进入欢迎函数
+2018-07-04 09:28:34,935 adminmemo.py [line:86] AdminMemo INFO louhui123登入成功
+2018-07-04 09:28:34,935 adminmemo.py [line:285] AdminMemo INFO 加载数据库文件
+2018-07-04 09:28:34,935 adminmemo.py [line:294] AdminMemo INFO 输出所有的日志

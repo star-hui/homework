@@ -53,6 +53,7 @@ class AdminMemo:
         self.conf_path = conf_path  # 配置文件路径
         self.db_path = ''         # 数据库文件路径，在登入以后替换
         self.conf = MyConf(self.conf_path)  # 加载密码文件
+        self.conf.set_default(os.path.join(BASE_DIR, 'db'))   # 每次启动，把base_dir存入到config，避免在程序移动目录出错，后续子章节都是用$这种使用方式
         self.__pwd = self.load_pwd()  # 加载密码配置文件配置文件
         self.memo_list = []
         self.welcome()
@@ -81,6 +82,7 @@ class AdminMemo:
             if self.__pwd.get(username) == password:
                 print(f'{username}欢迎登入!')
                 self.db_path = self.conf.file_path(username)  # 验证通过之后，加载该用户的配置文件，读取该用户的数据库路径
+                print(self.db_path)
                 self.log.info(f'{username}登入成功')
                 self.memo_list = self.load()  # 加载数据库文件
                 ret['status'] = 1
@@ -130,13 +132,14 @@ class AdminMemo:
             self.log.info(f'{reg_username}-注册成功')
             dic = {
                 reg_username:{
-                    'path': os.path.join(BASE_DIR, 'db'),
+                    # 'path': os.path.join(BASE_DIR, 'db'),
+                    'path' : '${base_dir}',
                     'file_name': reg_username,
                     'db_type': 'db'
                 }
             }
 
-            self.conf.write(dic)  # 2.保存到配置文件中
+            self.conf.write(dic)  # 2.保存数据库的路径到配置文件中
             self.conf.save()
 
             print('注册成功')

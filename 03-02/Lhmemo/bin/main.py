@@ -29,12 +29,15 @@ def main():
     else:                    # 登入进去进行各种操作
         login_result = admin.login(sys_li[2], sys_li[4])
         if login_result['status']:  # 账号密码验证通过
-            if hasattr(admin, admin.menus.get(sys_li[5])):
-                run = getattr(admin, admin.menus.get(sys_li[5], None))
-                if run:
-                    run()
+            if sys_li[5] in admin.menus:
+                if hasattr(admin, admin.menus.get(sys_li[5])):
+                    run = getattr(admin, admin.menus.get(sys_li[5], None))
+                    if run:
+                        run()
+                else:
+                    log.waring('系统menus错误，请检查')
             else:
-                log.waring('系统menus错误，请检查')
+                print('无该选项，请使用python main.py -h 核对后输入')
 
         else:  # 账号密码错误，不同的状态
             print(ColorMe(login_result['statusText']).red())
